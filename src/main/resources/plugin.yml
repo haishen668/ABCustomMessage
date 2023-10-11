@@ -1,0 +1,8 @@
+name: ABCustomMessage
+version: '${project.version}'
+main: me.albert.abcustommessage.ABCustomMessage
+api-version: '1.13'
+softdepend: [ AmazingBot,PlaceholderAPI ]
+commands:
+  abcustommessage:
+    aliases: [ abcm ]

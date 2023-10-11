@@ -1,0 +1,124 @@
+debug: false
+messagefolders:
+  - messages
+custom_messages:
+  服务器信息:
+    trigger: "服务器信息"
+    #需要启用的群列表,无则全局启用
+    groups:
+      - "0000000"
+    responses:
+      - "在线: %server_online% 玩家"
+      - "[image] 服务器信息图片"
+  我的信息:
+    #有则未绑定用户的玩家发送此消息,无则忽略是否绑定
+    unbind_messages:
+      - "您还没有绑定游戏ID 请输入/bd 名字进行绑定"
+    trigger: "我的信息"
+    responses:
+      - "[image] 玩家信息图片"
+  执行命令:
+    trigger: "玩家列表"
+    responses:
+      - "[command] list"
+  正则匹配:
+    trigger: "[regex] .*氪金.*"
+    responses:
+      - "服务器直接输入/amc 金额 即可氪金"
+  加群欢迎:
+    trigger: "[join]"
+    responses:
+      - "[CQ:at,qq={qq}]欢迎加入本服务器,目前在线%server_online%玩家"
+  特殊消息:
+    trigger: '音乐'
+    responses:
+      - '[CQ:music,type=custom,url=https://y.music.163.com/m/song?id=526203483&uct=tQHIc%2BP321sz%2B%2FDMnTZfgg%3D%3D&app_version=8.2.61,audio=http://music.163.com/song/media/outer/url?id=1446791775,image=https://p1.music.126.net/dIp4lnixJvVQBEK8lmLxKg==/109951164973024272.jpg,content=拼音师,title=老八秘制小汉堡2.0]'
+custom_images:
+  服务器信息图片:
+    source: "test.png"
+    texts:
+      实体:
+        text: "实体数量: %server_total_living_entities%"
+        x: 40
+        z: 40
+        font: 楷体
+        #字体大小
+        size: 20
+        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
+        style: 1
+        #rgb颜色
+        color: "15|255|240"
+      内存:
+        text: "内存: %server_ram_used%MB/%server_ram_total%MB 最大内存 %server_ram_max%MB"
+        x: 40
+        z: 80
+        font: 宋体
+        size: 20
+        style: 3
+        color: "127|255|170"
+      运行时间:
+        text: "运行时间: %server_uptime%"
+        x: 40
+        z: 120
+        font: 等线
+        size: 20
+        style: 3
+        color: "255|215|0"
+  玩家信息图片:
+    source: "info.jpg"
+    texts:
+      玩家名称:
+        text: "%player_name%"
+        x: 70
+        z: 40
+        font: 楷体
+        #字体大小
+        size: 30
+        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
+        style: 1
+        #rgb颜色
+        color: "15|255|240"
+      玩家点券:
+        text: "点券: %playerpoints_points%"
+        x: 40
+        z: 100
+        font: 楷体
+        #字体大小
+        size: 20
+        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
+        style: 1
+        #rgb颜色
+        color: "127|255|170"
+      玩家游戏币:
+        text: "游戏币: %vault_eco_balance%"
+        x: 40
+        z: 160
+        font: 楷体
+        #字体大小
+        size: 20
+        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
+        style: 1
+        #rgb颜色
+        color: "255|215|0"
+      加入时间:
+        text: "加入时间: %player_first_join_date%%"
+        x: 40
+        z: 220
+        font: 楷体
+        #字体大小
+        size: 20
+        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
+        style: 1
+        #rgb颜色
+        color: "210|105|30"
+      上次登录:
+        text: "上次登录: %player_last_join_date%"
+        x: 40
+        z: 280
+        font: 楷体
+        #字体大小
+        size: 20
+        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
+        style: 1
+        #rgb颜色
+        color: "128|128|0"
