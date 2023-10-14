@@ -34,91 +34,45 @@ custom_messages:
     responses:
       - '[CQ:music,type=custom,url=https://y.music.163.com/m/song?id=526203483&uct=tQHIc%2BP321sz%2B%2FDMnTZfgg%3D%3D&app_version=8.2.61,audio=http://music.163.com/song/media/outer/url?id=1446791775,image=https://p1.music.126.net/dIp4lnixJvVQBEK8lmLxKg==/109951164973024272.jpg,content=拼音师,title=老八秘制小汉堡2.0]'
 custom_images:
-  服务器信息图片:
-    source: "test.png"
+  在线人数:
+    source: "在线人数.png"
     texts:
-      实体:
-        text: "实体数量: %server_total_living_entities%"
-        x: 40
-        z: 40
-        font: 楷体
+      在线人数:
+        text: "%server_online%"
+        x: 290
+        z: 270
+        font: 站酷高端黑体
         #字体大小
-        size: 20
+        size: 120
         #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
-        style: 1
-        #rgb颜色
-        color: "15|255|240"
-      内存:
-        text: "内存: %server_ram_used%MB/%server_ram_total%MB 最大内存 %server_ram_max%MB"
-        x: 40
-        z: 80
-        font: 宋体
-        size: 20
-        style: 3
-        color: "127|255|170"
-      运行时间:
-        text: "运行时间: %server_uptime%"
-        x: 40
-        z: 120
-        font: 等线
-        size: 20
-        style: 3
-        color: "255|215|0"
+        style: 0
   玩家信息图片:
-    source: "info.jpg"
+    source: "个人信息.png"
     texts:
       玩家名称:
-        text: "%player_name%"
-        x: 70
-        z: 40
-        font: 楷体
-        #字体大小
-        size: 30
-        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
-        style: 1
-        #rgb颜色
-        color: "15|255|240"
-      玩家点券:
-        text: "点券: %playerpoints_points%"
-        x: 40
-        z: 100
-        font: 楷体
-        #字体大小
-        size: 20
-        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
-        style: 1
-        #rgb颜色
-        color: "127|255|170"
-      玩家游戏币:
-        text: "游戏币: %vault_eco_balance%"
-        x: 40
-        z: 160
-        font: 楷体
-        #字体大小
-        size: 20
-        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
-        style: 1
-        #rgb颜色
-        color: "255|215|0"
-      加入时间:
-        text: "加入时间: %player_first_join_date%%"
-        x: 40
-        z: 220
-        font: 楷体
-        #字体大小
-        size: 20
-        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
-        style: 1
-        #rgb颜色
-        color: "210|105|30"
-      上次登录:
-        text: "上次登录: %player_last_join_date%"
-        x: 40
+        text: "&#3380ff%player_name%"
+        x: 245
         z: 280
-        font: 楷体
+        font: 站酷高端黑体
         #字体大小
-        size: 20
+        size: 53
         #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
-        style: 1
-        #rgb颜色
-        color: "128|128|0"
+        style: 0
+      玩家金币:
+        text: "&#F2994A%vault_eco_balance%&#7F8A9B枚"
+        x: 275
+        z: 390
+        font: 站酷高端黑体
+        #字体大小
+        size: 53
+        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
+        style: 0
+      在线状态:
+        text: "%offlinePapi_playerIsOnline%"
+        x: 276
+        z: 500
+        font: 旁门正道标题体
+        #字体大小
+        size: 55
+        #字体样式 0 =普通 #1=加粗 #2=斜体 #3=加粗斜体
+        style: 0

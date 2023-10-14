@@ -3,7 +3,7 @@ package me.albert.abcustommessage.objects;
 public class SubImage {
     public final String id;
 
-    public final String url;
+    public final String path;
 
     public final int width;
 
@@ -13,9 +13,9 @@ public class SubImage {
 
     public final int z;
 
-    public SubImage(String id, String url, int width, int height, int x, int z) {
+    public SubImage(String id, String path, int width, int height, int x, int z) {
         this.id = id;
-        this.url = url;
+        this.path = path;
         this.width = width;
         this.height = height;
         this.x = x;

@@ -9,17 +9,14 @@ public class CustomText {
 
     public final Font font;
 
-    public final Color color;
-
     public final int x;
 
     public final int z;
 
-    public CustomText(String id, String text, Font font, Color color, int x, int z) {
+    public CustomText(String id, String text, Font font, int x, int z) {
         this.id = id;
         this.text = text;
         this.font = font;
-        this.color = color;
         this.x = x;
         this.z = z;
     }

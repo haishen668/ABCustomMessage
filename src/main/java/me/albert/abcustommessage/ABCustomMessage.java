@@ -64,12 +64,12 @@ public class ABCustomMessage extends JavaPlugin {
         ConfigurationSection subImages = config.getConfigurationSection("custom_images." + key + ".images");
         if (subImages != null)
             for (String subImageID : subImages.getKeys(false)) {
-                String url = subImages.getString(subImageID + ".url");
+                String path = subImages.getString(subImageID + ".path");
                 int w = subImages.getInt(subImageID + ".width");
                 int h = subImages.getInt(subImageID + ".height");
                 int x = subImages.getInt(subImageID + ".x");
                 int z = subImages.getInt(subImageID + ".z");
-                SubImage subImage = new SubImage(subImageID, url, w, h, x, z);
+                SubImage subImage = new SubImage(subImageID, path, w, h, x, z);
                 subImageList.add(subImage);
             }
         return subImageList;
@@ -95,12 +95,12 @@ public class ABCustomMessage extends JavaPlugin {
                     //如果在就设置style和size
                     font = font.deriveFont(style, size);
                 }
-                String colorString = customTexts.getString(textID + ".color");
-                ArrayList<Integer> colors = new ArrayList<>();
-                for (String s : colorString.split("\\|"))
-                    colors.add(Integer.valueOf(Integer.parseInt(s)));
-                Color color = new Color(((Integer) colors.get(0)).intValue(), ((Integer) colors.get(1)).intValue(), ((Integer) colors.get(2)).intValue());
-                CustomText customText = new CustomText(textID, text, font, color, x, z);
+//                String colorString = customTexts.getString(textID + ".color");
+//                ArrayList<Integer> colors = new ArrayList<>();
+//                for (String s : colorString.split("\\|"))
+//                    colors.add(Integer.valueOf(Integer.parseInt(s)));
+//                Color color = new Color(((Integer) colors.get(0)).intValue(), ((Integer) colors.get(1)).intValue(), ((Integer) colors.get(2)).intValue());
+                CustomText customText = new CustomText(textID, text, font, x, z);
                 customTextList.add(customText);
             }
         return customTextList;
@@ -159,8 +159,9 @@ public class ABCustomMessage extends JavaPlugin {
     public void onEnable() {
         instance = this;
         saveDefaultConfig();
-        saveResource("images/test.png", false);
-        saveResource("images/info.jpg", false);
+        saveResource("images/个人信息.png", false);
+        saveResource("images/在线人数.png", false);
+        saveResource("images/精灵背包.png", false);
         getServer().getPluginManager().registerEvents((Listener) new MessageListener(), (Plugin) this);
         loadAllFonts();
         loadCustomMessages();
@@ -177,9 +178,15 @@ public class ABCustomMessage extends JavaPlugin {
                 return true;
             }
             if (args[0].equalsIgnoreCase("fonts")) {
-                sender.sendMessage("§a字体列表: ");
+                sender.sendMessage("§a默认字体列表: ");
                 for (Font font : GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts())
                     sender.sendMessage(font.getName());
+                sender.sendMessage("§a自定义拓展字体列表: ");
+                Set<String> extraFont = customFontList.keySet();
+                Iterator<String> iterator = extraFont.iterator();
+                while (iterator.hasNext()) {
+                    sender.sendMessage(iterator.next());
+                }
                 return true;
             }
             if (args[0].equalsIgnoreCase("log")) {

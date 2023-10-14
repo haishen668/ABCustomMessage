@@ -44,7 +44,9 @@ public class MessageUtil {
                         response = response.append("无法找到图片ID: ").append(imageID);
                         continue;
                     }
+                    //渲染图片
                     BufferedImage image = customImage.renderImage(offlinePlayer);
+                    //发送信息
                     response = response.append(MsgUtil.bufferedImgToMsg(image));
                 } catch (Exception e) {
                     if (ABCustomMessage.getInstance().getConfig().getBoolean("debug"))

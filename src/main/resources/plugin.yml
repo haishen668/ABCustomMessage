@@ -1,8 +1,11 @@
 name: ABCustomMessage
 version: '${project.version}'
 main: me.albert.abcustommessage.ABCustomMessage
+authors:
+  - Albert
+  - haishen668
 api-version: '1.13'
-softdepend: [ AmazingBot,PlaceholderAPI ]
+softdepend: [ AmazingBot,PlaceholderAPI,PokemonBag ]
 commands:
   abcustommessage:
     aliases: [ abcm ]
